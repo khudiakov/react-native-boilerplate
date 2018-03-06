@@ -7,3 +7,6 @@
 * styled-components
 * react-router
 * ramda
+
+**TODO:**
+* TypeScript
