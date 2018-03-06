@@ -1,0 +1,25 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "@expo/samples": "2.1.1",
+    "apollo-boost": "^0.1.2",
+    "expo": "^25.0.0",
+    "graphql": "^0.13.1",
+    "ramda": "^0.25.0",
+    "react": "16.2.0",
+    "react-apollo": "^2.0.4",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "react-router-native": "^4.2.0",
+    "styled-components": "^3.2.0"
+  },
+  "devDependencies": {
+    "jest-expo": "^25.0.0"
+  }
+}
