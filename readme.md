@@ -10,8 +10,5 @@ Using **yarn** package manager
 * react-navigation
 * native-base
 * ramda
-
-**TODO:**
-
-* Flow
 * ESLint
+* flow
