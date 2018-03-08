@@ -1,5 +1,7 @@
 # React Native boilerplate
 
+Using **yarn** package manager
+
 **Includes packages**:
 
 * expo
