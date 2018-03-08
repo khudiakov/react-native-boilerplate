@@ -7,8 +7,11 @@ Using **yarn** package manager
 * expo
 * apollo-graphql
 * styled-components
-* react-router
+* react-navigation
+* native-base
 * ramda
 
 **TODO:**
-* TypeScript
+
+* Flow
+* ESLint

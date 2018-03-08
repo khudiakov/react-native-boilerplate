@@ -7,7 +7,8 @@ import { ApolloProvider } from "react-apollo";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
-import { NativeRouter, Route, Link } from "react-router-native";
+import { TabNavigator } from "react-navigation";
+import { Container, Header, Content, H1 } from "native-base";
 
 import styled from "styled-components";
 
@@ -16,21 +17,33 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-const Wrapper = styled.View`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+const StyledH1 = styled(H1)`
+  color: red;
 `;
 
-const StyledText = styled.Text`
-  font-size: 20;
-`;
+const Home = () => (
+  <Container>
+    <Content>
+      <H1>Home</H1>
+    </Content>
+  </Container>
+);
+const About = () => (
+  <Container>
+    <Content>
+      <StyledH1>About</StyledH1>
+    </Content>
+  </Container>
+);
 
-const Home = () => <Text>Home</Text>;
-
-const About = () => <Text>About</Text>;
+const Navigator = TabNavigator({
+  Home: {
+    screen: Home
+  },
+  About: {
+    screen: About
+  }
+});
 
 export default class App extends React.Component {
   state = {
@@ -49,21 +62,7 @@ export default class App extends React.Component {
     } else {
       return (
         <ApolloProvider client={client}>
-          <NativeRouter>
-            <Wrapper>
-              <View>
-                <Link to="/">
-                  <Text>Home</Text>
-                </Link>
-                <Link to="/about">
-                  <Text>About</Text>
-                </Link>
-              </View>
-
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-            </Wrapper>
-          </NativeRouter>
+          <Navigator />
         </ApolloProvider>
       );
     }
